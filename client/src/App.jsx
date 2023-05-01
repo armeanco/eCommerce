@@ -10,12 +10,6 @@ import cart     from "./materials/cart.jpg";
 import search   from "./materials/search.jpg";
 import user     from "./materials/user.png";
 /*********************************************/
-/******Slide-materials-content-images*********/
-import cslideX from "./materials/canvas_slide_1.jpg";
-import cslideY from "./materials/canvas_slide_2.jpg"
-import cslideZ from "./materials/canvas_slide_3.jpg";
-/*********************************************/
-
 function App() {
   const [count, setCount] = useState(0)
   return (
