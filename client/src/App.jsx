@@ -1,0 +1,99 @@
+import { useState } from 'react'
+import './App.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import  ImageSlider  from './components/ImageSlider';
+import { SliderData } from './components/SliderData';
+/******Header-materials-content-images*********/
+import logotype from "./materials/logotype.png";
+import location from "./materials/location.png"
+import cart     from "./materials/cart.jpg";
+import search   from "./materials/search.jpg";
+import user     from "./materials/user.png";
+/*********************************************/
+/******Slide-materials-content-images*********/
+import cslideX from "./materials/canvas_slide_1.jpg";
+import cslideY from "./materials/canvas_slide_2.jpg"
+import cslideZ from "./materials/canvas_slide_3.jpg";
+/*********************************************/
+
+function App() {
+  const [count, setCount] = useState(0)
+  return (
+    <div>
+      <header className="flex justify-between">
+        <div className="flex items-center">
+          <div href="" className="location">
+            <LazyLoadImage
+            alt={location.alt}
+            height={30}
+            src={location}
+            width={30} />
+          </div>
+          <div className="flex gap-1">
+            <div><br/><a style={{textDecoration: 'none', color: '#656565', fontSize: 10}} href="">ENG |</a></div>
+            <div><br/><a style={{textDecoration: 'none', color: '#656565', fontSize: 10}} href="">ARM |</a></div>
+            <div><br/><a style={{textDecoration: 'none', color: '#656565', fontSize: 10}} href="">RUS</a></div>
+          </div>
+        </div>
+        <div>
+          <a href="" className="flex items-center">
+            <LazyLoadImage
+            alt={logotype.alt}
+            height={100}
+            src={logotype}
+            width={100} />
+          </a>
+        </div>
+        <div className="flex items-center gap-1.5 p-2" style={{marginTop: '0.8rem'}}>
+          <div className="flex">
+          <a href="" className="flex">
+            <LazyLoadImage
+              alt={search.alt}
+              height={20}
+              src={search}
+              width={17} />
+            </a>
+          </div>
+          <div className="flex">
+            <a href="" className="flex">
+              <LazyLoadImage
+              alt={cart.alt}
+              height={25}
+              src={cart}
+              width={30} />
+              </a>
+          </div>
+          <div className="flex">
+            <a href="" className="flex">
+              <LazyLoadImage
+              alt={user.alt}
+              height={25}
+              src={user}
+              width={25} />
+            </a>
+          </div>
+        </div>
+      </header>
+      <div>
+        <div className="flex justify-between" style={{marginLeft: "200px", marginRight: "200px", fontSize: 18}}>
+          <div>
+            <a href="" style={{textDecoration: 'none', color: '#323232'}}>О НАС</a>
+          </div>
+          <div>
+            <a href="" style={{textDecoration: 'none', color: '#323232'}}>КОНТАКТЫ</a>
+          </div>
+          <div>
+            <a href="" style={{textDecoration: 'none', color: '#323232'}}>МЕБЕЛЬ</a>
+          </div>
+          <div>
+            <a href="" style={{textDecoration: 'none', color: '#323232'}}>МАГАЗИН</a>
+          </div>
+        </div>
+      </div>
+      <div className="slider">
+         <ImageSlider slides={SliderData} />
+      </div>
+    </div>)
+}
+
+export default App
