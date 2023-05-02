@@ -41,3 +41,22 @@
   transition-duration: 2s;
   transform: scale(1);
 }
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.is-sticky {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+  background-color: white !important;
+  animation: 0ms ease-in-out 0s normal none 0 running fadeInDown;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
