@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.location {
+  display: flex;
+  margin-top: 10%;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #ffffff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #ffffff;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0.6;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: ease 2s;
+  transform: scale(1);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /*height: auto*/
+  z-index: 999;
+  background: white !important;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 25%);
+  animation: 1s ease-in-out 1s normal none 1 running fadeInDown;
+  transition: 1s;
+}
+
+.is-sticky-fav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vmax; /*height: auto*/
+  z-index: 999;
+  background: white !important;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 25%);
+  animation: 1s ease-in-out 1s normal none 1 running fadeInDown;
+  transition: 1s;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-flex;
+  overflow-y: hidden visible;
+  max-height: 60vmax;
+  scroll-behavior: smooth;
+}
+
+.search-toggle {
+  transition: .5s !important;
+  animation: 10ms ease-in-out !important;
+}
+
+.search-tag {
+  position: relative;
+  display: inline-flex;
+  width:95vmax;
+  outline: none;
+}
+
+.search-items {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.content-flux {
+  float: right;
+  margin-right: 1%;
+}
+ 
+.add-to-cart {
+    display: block;
+    margin: 1% auto;
+    border-style: none;
+    width: 10em;
+    height: 3em;
+    background: #a7ffa4;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.add-to-cart:hover {
+  background: white;
+  color: #a7ffa4;
+  border: 2px solid #a7ffa4;
+  border-radius: 20px;
+  transition: .3s;
+}
+
+.dropdown {
+  display: block;
+  border-style: none;
+  background: whitesmoke;
+  color: black;
+  border-radius: 20px;
+  box-shadow: 0 2px 24px 0 rgb(0 0 0 / 25%);
+}
+
+.arrow {
+  margin-left: 20vmax;
+}
+
+.purchase {
+  display: block;
+  margin: 1% auto;
+  border-style: none;
+  width: 50em;
+  height: 3em;
+  background: #d0bafa;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.purchase:hover {
+background: white;
+color: #d0bafa;
+border: 2px solid #d0bafa;
+border-radius: 20px;
+transition: .3s;
+}
+
+.dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Slideshow */
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 100vmax;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 2000ms;
+}
+
+.slidee {
+  display: inline-block;
+  width: 100%;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  position: absolute;
+  top: 92%;
+  z-index: 800;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 0.3vmax;
+  width: 4vmax;
+  margin: 15px 7px 0px;
+  background-color: white;
+  user-select: none;
+}
+
+/*.slideshowDot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+
+  background-color: #c4c4c4;
+}*/
+
+.slideshowDot.active {
+  background-color: cyan;
+}
